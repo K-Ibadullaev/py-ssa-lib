@@ -27,6 +27,5 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # python -m pip install numpy pandas scipy scikit-learn matplotlib pytest 
-        python -m pip  install py-ssa-lib
+        pip install py-ssa-lib
         pytest

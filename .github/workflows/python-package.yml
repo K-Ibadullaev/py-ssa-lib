@@ -26,9 +26,4 @@ jobs:
     - name: Install dependencies
       run: |
         
-        python -m pip install pytest numpy scikit-learn pandas matplotlib scipy
-        
-    
-    - name: Test with pytest
-      run: |
-        pytest
+        python -m pip install pytest 

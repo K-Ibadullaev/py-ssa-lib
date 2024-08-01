@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: py_ssa
+Name: py_ssa_lib
 Version: 0.0.1
 Summary: "This package implements MSSA and SSA in Python"
 Home-page: https://github.com/K-Ibadullaev/py_ssa

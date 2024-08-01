@@ -3,5 +3,5 @@ This package contains python implementations of the  **Singular Spectrum Analysi
 
 ## Installation
 ```shell
-$ python -m pip install py_ssa_lib
+$ python -m pip install py-ssa-lib
 ```

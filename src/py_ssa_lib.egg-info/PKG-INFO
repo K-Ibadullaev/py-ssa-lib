@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: py_ssa_lib
+Version: 0.0.1
+Summary: "This package implements MSSA and SSA in Python"
+Home-page: https://github.com/K-Ibadullaev/py_ssa
+Author: [
+{  Konstantin Ibadullaev, email= <konstantin.ibadullaev.post@gmail.com>}]
+License: GPL-3.0-or-later
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+
+# PY-SSA PACKAGE
+This package contains python implementations of the  **Singular Spectrum Analysis(SSA)** and **Multichannel Singular Spectrum Analysis(MSSA)**. One can use them for the time series analysis and forecasting.
+
+## Installation
+```shell
+$ python -m pip install py_ssa
+```

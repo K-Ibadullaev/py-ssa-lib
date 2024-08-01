@@ -1,14 +1,17 @@
-name: Test workflow
+name: Packaging
 
 on: 
   - push
 
 jobs:
-  say-hello:
-    name: Say Hello
+  run_test:
+    name: Check Tests
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
 
-        - name: Say Hello
-          run: echo "Hello"
+        - uses: actions/setup-python@v4.0.0
+            with:
+              python-version: "3.10"
+        - name: Test classes
+          run: py -m pytest

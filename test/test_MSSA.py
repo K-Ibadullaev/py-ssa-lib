@@ -1,5 +1,5 @@
 import sys
-import py_ssa
+import py_ssa_lib
 import pytest
 import pandas as pd 
 import numpy as np
@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import scipy as sp
 from sklearn.utils.extmath import randomized_svd
 
-from py_ssa.MSSA import MSSA
-from py_ssa.datasets.load_energy_consumption_df import load_energy_consumption_df
+from py_ssa_lib.MSSA import MSSA
+from py_ssa_lib.datasets.load_energy_consumption_df import load_energy_consumption_df
 
 
 def test_mssa_init():

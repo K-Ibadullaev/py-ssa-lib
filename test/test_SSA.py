@@ -1,5 +1,5 @@
 import sys
-import py_ssa
+import py_ssa_lib
 
 import pytest
 import pandas as pd 
@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import scipy as sp
 from sklearn.utils.extmath import randomized_svd
 
-from py_ssa.SSA import SSA
-from py_ssa.datasets.load_energy_consumption_df import load_energy_consumption_df
+from py_ssa_lib.SSA import SSA
+from py_ssa_lib.datasets.load_energy_consumption_df import load_energy_consumption_df
 
 
 def test_ssa_init():

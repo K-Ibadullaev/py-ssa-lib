@@ -133,6 +133,7 @@ class SSA():
         """
        
         self.df = df
+        self.ts = ts
         self.idx_start_ts = idx_start_ts
         self.ts_df = self.df.iloc[ts,self.idx_start_ts:].T
         self.decomposition = decomposition
@@ -338,7 +339,7 @@ class SSA():
        
         ts_rec = self.X_to_TS(chosen_components)
         if return_as_df==True:
-            return pd.DataFrame(columns=self.df.columns, data=np.column_stack([self.df.iloc[:,:self.idx_start_ts].values,ts_rec.T ]))
+            return pd.DataFrame(columns=self.df.columns, data=np.column_stack([self.df.iloc[self.ts,:self.idx_start_ts].values,ts_rec.T ]))
         return ts_rec.T
 
 

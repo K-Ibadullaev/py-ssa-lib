@@ -341,7 +341,10 @@ class SSA():
        
         ts_rec = self.X_to_TS(chosen_components)
         if return_as_df==True:
-            return pd.DataFrame(columns=self.df.columns, data=np.column_stack([self.df.iloc[self.ts,:self.idx_start_ts].values,ts_rec.T ]))
+            ts_rec = pd.DataFrame( data=np.hstack([self.df.iloc[self.ts,:self.idx_start_ts].values ,ts_rec.flatten() ])).T
+            ts_rec.columns = self.df.columns
+            return ts_rec
+            #pd.DataFrame(columns=self.df.columns, data=np.column_stack([self.df.iloc[self.ts,:self.idx_start_ts].values,ts_rec.T ]))
         return ts_rec.T
 
 

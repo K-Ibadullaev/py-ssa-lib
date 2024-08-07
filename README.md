@@ -56,7 +56,7 @@ If you find this package useful, please, cite:
 (This file and the citation format will change over time.)
 
 ## Issues and Contributions
-I am open to feedbacks and discussion of issues. The contributions are always welcome unless not reasoned.
+I am open to feedbacks and a discussion of issues. The well-grounded contributions are always welcome!
 
 ## Future Updates
 I intend to introduce the updates once per 3 monthes. 

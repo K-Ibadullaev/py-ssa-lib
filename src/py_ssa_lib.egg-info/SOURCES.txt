@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/py_ssa_lib/MSSA.py
+src/py_ssa_lib/SSA.py
+src/py_ssa_lib/__init__.py
+src/py_ssa_lib.egg-info/PKG-INFO
+src/py_ssa_lib.egg-info/SOURCES.txt
+src/py_ssa_lib.egg-info/dependency_links.txt
+src/py_ssa_lib.egg-info/top_level.txt
+src/py_ssa_lib/datasets/__init__.py
+src/py_ssa_lib/datasets/energy_consumption_df.csv
+src/py_ssa_lib/datasets/load_energy_consumption_df.py
+src/py_ssa_lib/datasets/total-primary-energy-consumption-csv-version-4.csv
+test/test_MSSA.py
+test/test_SSA.py

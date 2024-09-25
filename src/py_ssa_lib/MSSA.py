@@ -340,13 +340,14 @@ class MSSA():
     
     def L_Forecast(self, ts, M, idx_components, mode='forward'):
         """
-                    Forecasts or estimates M values for a given time series using LRR 
+                    Forecasts  M values for a given time series using LRR 
                     Parameters
                     ----------
                     idx_components:list or numpy.arange of positive integer numbers, denotes the indices of elementary components 
                     ts: numpy.array, input time series 
                     M:int, number of  values to forecast or estimate
-                    mode:str, forecasts M future values for S time series if mode is "forward", or estimates the last M values for S input time series, if mode is 'retrospective'
+                    mode:str, forecasts M future values for S time series if mode is "forward", 
+                   
                   
                     Returns
                     -------
@@ -365,13 +366,14 @@ class MSSA():
             for m in range(0,M):
                     y_pred[:,self.N+m] = (y_pred[:,self.N-self.L+m+1:y_pred.shape[1]-M+m]@R).flatten()
                 
-        elif mode == 'retrospective':
-            y_pred = np.zeros((ts.shape[0],self.N))
-            y_pred[:,:self.N-M] = ts[:,:self.N-M]
+        #elif mode == 'retrospective':
+            # This method is no longer supported
+            #y_pred = np.zeros((ts.shape[0],self.N))
+            #y_pred[:,:self.N-M] = ts[:,:self.N-M]
             
-            for m in range(0,M):
+            #for m in range(0,M):
                 
-                    y_pred[:,self.N+m-M] = (y_pred[:,self.N-self.L+m+1-M:y_pred.shape[1]-M+m] @ R).flatten()
+                    #y_pred[:,self.N+m-M] = (y_pred[:,self.N-self.L+m+1-M:y_pred.shape[1]-M+m] @ R).flatten()
     
             
         else:

@@ -340,7 +340,7 @@ class MSSA():
     
     def L_Forecast(self, ts, M, idx_components, mode='forward'):
         """
-                    Forecasts or estimates M values for a given time series using LRR 
+                    Forecasts  M values for a given time series using LRR 
                     Parameters
                     ----------
                     idx_components:list or numpy.arange of positive integer numbers, denotes the indices of elementary components 

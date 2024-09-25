@@ -376,14 +376,13 @@ class SSA():
     
     def L_Forecast(self, ts, M, idx_components, mode='forward'):
         """
-                    Forecasts or estimates M values for a given time series using LRR 
+                    Forecasts M values for a given time series using LRR (L-Forecasting)
                     Parameters
                     ----------
                     idx_components:list or numpy.arange of positive integer numbers, denotes the indices of elementary components 
                     ts: numpy.array, input time series 
                     M:int, number of  values to forecast or estimate
-                    mode:str, forecasts M future values for S time series if mode is "forward", or estimates the last M values for S input time series, if mode is 'retrospective'
-                  
+                    mode:str, forecasts M future values for S time series if mode is "forward"
                     Returns
                     -------
                     y_pred: numpy.array, original time series + M forecasted values, or original time series, where the last M values are estimated
@@ -400,12 +399,13 @@ class SSA():
             for m in range(0,M):
                     
                     y_pred[:,self.N+m] = (y_pred[:,self.N-self.L+m+1:y_pred.shape[0]-M+m-1]) @ R
-        elif mode == 'retrospective':
-            y_pred = np.zeros((1,self.N))
-            y_pred[0,:self.N-M] = ts[:self.N-M]
-            for m in range(0,M):
+        #elif mode == 'retrospective':
+            #this is an deprecated method
+            #y_pred = np.zeros((1,self.N))
+            #y_pred[0,:self.N-M] = ts[:self.N-M]
+            #for m in range(0,M):
                 
-                    y_pred[:,self.N+m-M] = (y_pred[:,self.N-self.L+m+1-M:y_pred.shape[0]-M+m-1]) @ R
+                    #y_pred[:,self.N+m-M] = (y_pred[:,self.N-self.L+m+1-M:y_pred.shape[0]-M+m-1]) @ R
     
             
         else:
@@ -415,6 +415,33 @@ class SSA():
         
             
         return y_pred
+        
+    def K_Forecast(model, ts, M, idx_components):
+        """
+                    Forecasts M values for a given time series using K-Forecasting 
+                    Parameters
+                    ----------
+                    idx_components:list or numpy.arange of positive integer numbers, denotes the indices of elementary components 
+                    ts: numpy.array, input time series 
+                    M:int, number of  values to forecast or estimate
+                   
+                    Returns
+                    -------
+                    Z: numpy.array, original time series + M forecasted values, or original time series, where the last M values are estimated
+        """
+
+        
+        print(Warning("This function is under development! \nIt might contain some errors due to indexing of the signal space!"))
+        Q = np.delete(model.V[:, idx_components], model.K-1, axis=0)
+        W = model.V[model.K-1, idx_components].reshape(1,-1)
+        Inverse = np.linalg.inv(np.eye(1) - W @ W.T) 
+        Z = ts[-model.K+1:]
+        Z = np.append(Z, np.zeros((M))).reshape(-1,1)
+    
+        for m in range(0,M):
+            Z[-M+m,:] = Inverse @ W @ Q.T @ Z[-M+m - model.K+1:-M + m,:]
+           
+        return Z.T
     
     def estimate_ESPRIT(self, idx_components=[0], decompose_rho_omega=False):
         """

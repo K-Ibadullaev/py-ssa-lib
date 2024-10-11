@@ -6,6 +6,10 @@ This package contains python implementations of the  **Singular Spectrum Analysi
 It can be used for the time series analysis and forecasting. 
 
 **Please, take a look on the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide) !**
+
+
+**NEW:** The [Wiki](https://github.com/K-Ibadullaev/py-ssa-lib/wiki) for the **py-ssa-lib** package is now available and will be periodically updated. It contains some theoretical background about the MSSA and SSA.
+
  
 ## Installation
 ```shell
@@ -15,7 +19,7 @@ $ python -m pip install py-ssa-lib
 ## Requirements
 The required packages are listed in the requirements.txt and can be installed from this file via pip.
 
-However all dependecies should be automatically installed along with installation of the **py-ssa-lib**
+All dependencies should be automatically installed during the installation of the **py-ssa-lib**
 
 The classes in the **py-ssa-lib** heavily rely on the numpy, scipy, sklearn, pandas and matplotlib libraries.
 
@@ -61,8 +65,7 @@ I am open to feedbacks and a discussion of issues. The well-grounded contributio
 ## Future Updates
 I intend to introduce the updates once per 3 monthes. 
 The comming features might be:
-- Asymptotic Prediction and Confidence Intervals
+- Asymptotic Confidence Intervals
 - Some new data sets for the demonstration purposes
 - Gap Filling
-- Wiki with a bit more informative description of the mathematical background for SSA/MSSA
 -  ...

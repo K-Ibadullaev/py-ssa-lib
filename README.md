@@ -59,13 +59,6 @@ If you find this package useful, please, cite:
 
 (This file and the citation format will change over time.)
 
-## Issues and Contributions
-I am open to feedbacks and a discussion of issues. The well-grounded contributions are always welcome!
 
-## Future Updates
-I intend to introduce the updates once per 3 monthes. 
-The comming features might be:
-- Asymptotic Confidence Intervals
-- Some new data sets for the demonstration purposes
-- Gap Filling
--  ...
+
+

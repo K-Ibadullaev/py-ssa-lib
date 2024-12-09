@@ -35,7 +35,7 @@ However, they seem to be no longer maintained and they provided a limited functi
 So the aim of this package is to migrate the most useful functions from the RSSA-package into Python, in order to provide a seamless workflow for the time series analysis.
 
 
-## List of the Used Packages
+## List of the Core Packages
 - NumPy https://numpy.org/
 - SciPy https://scipy.org/
 - Jupyter Lab https://jupyterlab.readthedocs.io/en/latest/index.html
@@ -61,5 +61,6 @@ If you find this package useful, please, cite:
 
 
 ### Acknowledgements
-This package is developed as a part of the research project "Intelligent Geosystems" supported by ESF funding [100693905]
+This package is developed as a part of the research project "Intelligent Geosystems" (100693905) supported by ESF funding
+
 ![alt text](https://github.com/K-Ibadullaev/py-ssa-lib/blob/main/ESFICON.png)

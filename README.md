@@ -52,7 +52,7 @@ So the aim of this package is to migrate the most useful functions from the RSSA
   
 
 
-## Citation 
+### Citation 
 If you find this package useful, please, cite:
 
 **Konstantin Ibadullaev, https://github.com/K-Ibadullaev/py_ssa/**
@@ -60,5 +60,6 @@ If you find this package useful, please, cite:
 (This file and the citation format will change over time.)
 
 
-
+### Acknowledgements
+This package is developed as a part of the research project "Intelligent Geosystems" supported by ESF funding [100693905]
 

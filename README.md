@@ -62,4 +62,4 @@ If you find this package useful, please, cite:
 
 ### Acknowledgements
 This package is developed as a part of the research project "Intelligent Geosystems" supported by ESF funding [100693905]
-
+![alt text](https://github.com/K-Ibadullaev/py-ssa-lib/blob/main/ESFICON.png)

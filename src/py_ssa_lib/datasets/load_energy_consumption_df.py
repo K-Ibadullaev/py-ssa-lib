@@ -1,6 +1,7 @@
 import pandas as pd
 import os 
-
+# https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption
+# https://ourworldindata.org/energy#explore-data-on-energy
 def load_energy_consumption_df(rawDS=False):
 
 	dir_path = os.path.dirname(os.path.realpath(__file__))

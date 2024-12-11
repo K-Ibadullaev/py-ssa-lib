@@ -368,7 +368,7 @@ class MSSA():
             return y_pred[:,-M:]
 
     def K_forecast(self, ts, M, idx_components,  return_full=True):
-          """"
+        """
                     Forecasts  M values for a given time series using V eigenspace
                     Parameters
                     ----------

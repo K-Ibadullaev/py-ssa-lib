@@ -375,7 +375,7 @@ class SSA():
             print(nu_sq)
 
     def K_forecast(self, ts, idx_components, M, return_full=True):
-        """"
+        """
                     Forecasts  M values for a given time series using V eigenspace
                     Parameters
                     ----------

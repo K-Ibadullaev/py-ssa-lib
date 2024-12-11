@@ -13,5 +13,7 @@ src/py_ssa_lib/datasets/__init__.py
 src/py_ssa_lib/datasets/energy_consumption_df.csv
 src/py_ssa_lib/datasets/load_energy_consumption_df.py
 src/py_ssa_lib/datasets/total-primary-energy-consumption-csv-version-4.csv
+src/py_ssa_lib/datasets/load_global_average_temperatures.py
+src/py_ssa_lib/datasets/GlobalLandTemperaturesByMajorCity.csv
 test/test_MSSA.py
 test/test_SSA.py

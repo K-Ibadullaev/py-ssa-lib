@@ -76,7 +76,7 @@ def test_ssa_L_Forecast():
 
             assert np.allclose(ssa_test.estimate_LRR( idx_components=[0]) , fact_lrr )==True
             assert np.allclose( 
-                                ssa_test.L_Forecast( ts_array, M=M_, idx_components=[0]), fact_L_forecast ) == True
+                                ssa_test.L_Forecast( ts_array, M=M_, idx_components=[0], mode='forward'), fact_L_forecast ) == True
             
 def test_ssa_estimate_ESPRIT():
             ts_index = 0

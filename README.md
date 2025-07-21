@@ -3,12 +3,16 @@
 Welcome to the page of the **py-ssa-lib** package!
 This package contains python implementations of the  **Singular Spectrum Analysis(SSA)** and **Multichannel Singular Spectrum Analysis(MSSA)**. 
 
-It can be used for the time series analysis and forecasting. 
+It can be used for the time series analysis and forecasting.
 
 **Please, take a look on the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide) !**
 
+## Mathematical Background
+The [Wiki](https://github.com/K-Ibadullaev/py-ssa-lib/wiki) for the **py-ssa-lib** package is now available and will be periodically updated. It contains some theoretical background about the MSSA and SSA.
 
-**NEW:** The [Wiki](https://github.com/K-Ibadullaev/py-ssa-lib/wiki) for the **py-ssa-lib** package is now available and will be periodically updated. It contains some theoretical background about the MSSA and SSA.
+## Updates
+**NEW:** The bootstrap prediction intervals are now available both for MSSA and SSA( and other models from other packages, since it is model free).
+Just import **bootstrap_prediction_intervals** from the new module **tools** and pass residuals and forecasted values.
 
  
 ## Installation
@@ -52,12 +56,15 @@ So the aim of this package is to migrate the most useful functions from the RSSA
   
 
 
+
 ### Citation 
 If you find this package useful, please, cite:
 
-**Konstantin Ibadullaev, https://github.com/K-Ibadullaev/py_ssa/**
+**Konstantin Ibadullaev, https://github.com/K-Ibadullaev/py_ssa-lib/**
 
 (This file and the citation format will change over time.)
+
+
 
 
 ### Acknowledgements

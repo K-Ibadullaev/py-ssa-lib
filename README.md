@@ -5,7 +5,7 @@ This package contains python implementations of the  **Singular Spectrum Analysi
 
 It can be used for the time series analysis and forecasting.
 
-**Please, take a look on the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide) !**
+**Please, take a look at the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide) !**
 
 ## Mathematical Background
 The [Wiki](https://github.com/K-Ibadullaev/py-ssa-lib/wiki) for the **py-ssa-lib** package is now available and will be periodically updated. It contains some theoretical background about the MSSA and SSA.

@@ -7,6 +7,9 @@
 # documentation.
 
 name: Upload Python Package
+on:
+  workflow_dispatch:
+  
 
 
 permissions:

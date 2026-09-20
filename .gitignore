@@ -4,3 +4,6 @@ env/
 *pycache__/
 dist/
 .coverage
+build/
+*.egg-info/
+docs/_build/

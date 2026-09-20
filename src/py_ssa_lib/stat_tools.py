@@ -1,6 +1,31 @@
+
+from numpy.typing import NDArray
 import numpy as np
-def bootstrap_prediction_intervals( residuals, forecasts, alpha=0.05, N_sims=1000):
+
+def bootstrap_prediction_intervals(
+                                    residuals: NDArray[np.float64],
+                                    forecasts: NDArray[np.float64],
+                                    alpha: float = 0.05,
+                                    N_sims: int = 1000
+                                ) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
     """
+    Parameters
+    ----------
+    residuals : ndarray
+        Residuals used for bootstrap resampling.
+    forecasts : ndarray
+        Point forecasts for future observations.
+    alpha : float
+        Significance level for the prediction interval.
+    N_sims : int
+        Number of bootstrap simulations.
+
+    Returns
+    -------
+    lower_pi : ndarray
+        Lower prediction bounds.
+    upper_pi : ndarray
+        Upper prediction bounds.
     This is a bootstrap method for the prediction intervals discucced in the online textbook of Rob J Hyndman and George Athanasopoulos https://otexts.com/fpp3/prediction-intervals.html.
     It computes lower and upper prediction intervals. This method is model free and requires only the independence of residuals and allows to get reasonable prediction intervals for lower computational costs 
     and milder conditions. This means one can use it for any other model besides the MSSA/SSA.
@@ -12,16 +37,6 @@ def bootstrap_prediction_intervals( residuals, forecasts, alpha=0.05, N_sims=100
     In the case of MSSA, one has to pick the time series of the interest with the same index. The algorithm doesn't change.
 
 
-        Parameters
-        ----------
-        residuals:numpy array - this is a numpy array of residuals of a length N for a chosen time series,  N should be sufficiently large(N>30?)
-        forecasts:numpy array - this is a numpy array of forecasted values of the length M(number of forecasting steps)
-        alpha : float,  ranges between 0 and 1, default value is 0.05 - this is a confidence level used to compute the quantiles from the simulations
-        N_sims: int, default value is 1000 - this is a number of simulations
-        Returns
-        -------
-        lower_pi:numpy array - this is a numpy array of the lower boundary for the forecasted values of the length M(number of forecasting steps)
-        upper_pit:numpy array - this is a numpy array of the  upper boundary for the forecasted values of the length M(number of forecasting steps)
 
     """
     

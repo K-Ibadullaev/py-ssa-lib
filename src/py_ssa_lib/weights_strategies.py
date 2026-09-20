@@ -6,6 +6,10 @@ import numpy as np
 
 
 class WeightingStrategy(ABC):
+    """
+    Base class for weighting of spectral channels.
+     
+    """
 
     @abstractmethod
     def compute_weights(
@@ -29,6 +33,10 @@ class WeightingStrategy(ABC):
         pass
 
 class UniformWeights(WeightingStrategy):
+    """
+    Classical implementation for weighting of spectral channels in SSA and MSSA.
+     
+    """
 
     def compute_weights(
                             self,
@@ -49,6 +57,10 @@ class UniformWeights(WeightingStrategy):
         return np.ones(X.shape[1])
 
 class PrecomputedWeights(WeightingStrategy):
+    """
+    Pass precomputed weights for the spectral channels in SSA and MSSA.
+     
+    """
 
     def compute_weights(
                                 self,
@@ -72,6 +84,10 @@ class PrecomputedWeights(WeightingStrategy):
         return np.asarray(weights, dtype=float)
 
 class DistanceWeights(WeightingStrategy):
+    """
+    Distance-based implementation for weighting of spectral channels in SSA and MSSA.
+     
+    """
 
     def compute_weights(
                                 self,
@@ -102,6 +118,10 @@ class DistanceWeights(WeightingStrategy):
         return weights
 
 class ClusterAwareWeights(WeightingStrategy):
+    """
+    Distance-based with cluster membership awareness implementation for weighting of spectral channels in SSA and MSSA.
+     
+    """
 
     def compute_weights(
                                     self,

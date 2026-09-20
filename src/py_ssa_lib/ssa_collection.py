@@ -15,6 +15,10 @@ from .weights_strategies import  WeightingStrategy, UniformWeights
 from .svd_strategies import  SVDStrategy, FullSVD
 
 class BaseSSA(ABC):
+    """
+    Base class for each SSA implementation
+
+    """
 
     DEFAULT_DECOMPOSITION = FullSVD
     DEFAULT_WEIGHTING = UniformWeights
@@ -466,6 +470,10 @@ class BaseSSA(ABC):
 
 #################################### SSA ########################
 class SSA(BaseSSA):
+    """
+    Class for the SSA. Use for the univariate time series analysis.
+     
+    """
 
     def _prepare_data(
                         self,
@@ -502,6 +510,10 @@ class SSA(BaseSSA):
 
 #################################### MSSA ########################
 class MSSA(BaseSSA):
+    """
+    Class for the MSSA. Use for the multivariate time series analysis.
+     
+    """
 
 
     def _prepare_data(

@@ -8,6 +8,10 @@ from sklearn.utils.extmath import randomized_svd
 
 
 class SVDStrategy(ABC):
+    """
+    Base class for performing SVD.
+     
+    """
 
     @abstractmethod
     def decompose(
@@ -37,6 +41,10 @@ class SVDStrategy(ABC):
         pass
 
 class FullSVD(SVDStrategy):
+    """
+    Class for performing full(exact) SVD.
+     
+    """
 
     def __init__(self, **kwargs: Any) -> None:
         """
@@ -80,6 +88,10 @@ class FullSVD(SVDStrategy):
         return U, sigma, Vt
 
 class RandomizedSVD(SVDStrategy):
+    """
+    Class for performing approximate SVD using randomizedSVD function from sklearn.utils module.
+     
+    """
 
     def __init__(
                                 self,

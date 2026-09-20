@@ -1,42 +1,44 @@
 # PY-SSA-LIB PACKAGE
 ## Intro
 Welcome to the page of the **py-ssa-lib** package!
-This package contains python implementations of the  **Singular Spectrum Analysis(SSA)** and **Multichannel Singular Spectrum Analysis(MSSA)**. 
+This package contains python implementations of the **Singular Spectrum Analysis(SSA)** and **Multichannel Singular Spectrum Analysis(MSSA)**. 
 
 It can be used for the time series analysis and forecasting.
 
-**Please, take a look at the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide) !**
+**Please, take a look at the guides for SSA and MSSA which are available in the [corresponding directory](https://github.com/K-Ibadullaev/py_ssa/tree/main/examples_and_guide)!**
 
 ## Mathematical Background
 The [Wiki](https://github.com/K-Ibadullaev/py-ssa-lib/wiki) for the **py-ssa-lib** package is now available and will be periodically updated. It contains some theoretical background about the MSSA and SSA.
+The API documentation is available [here](https://k-ibadullaev.github.io/py-ssa-lib/).
 
 ## Updates
-**NEW:** The bootstrap prediction intervals are now available both for MSSA and SSA( and other models from other packages, since it is model free).
-Just import **bootstrap_prediction_intervals** from the new module **tools** and pass residuals and forecasted values.
+**NEW:** Version 2.0.x is now available! 
 
- 
+- Simplified interface
+- Improved visualization tools
+- Extended SVD choice
+- Enabled various weighting schemes for channels of the MSSA
+- [API documentation](https://k-ibadullaev.github.io/py-ssa-lib/) 
+...
+
 ## Installation
 ```shell
 $ python -m pip install py-ssa-lib
 ```
 
 ## Requirements
-The required packages are listed in the requirements.txt and can be installed from this file via pip.
 
-All dependencies should be automatically installed during the installation of the **py-ssa-lib**
-
-The classes in the **py-ssa-lib** heavily rely on the numpy, scipy, sklearn, pandas and matplotlib libraries.
+The classes in the **py-ssa-lib** rely on the numpy, scipy, sklearn, pandas and matplotlib libraries.
 
 ## Similar Python Packages
 Before the development of the **py-ssa-lib** I searched for the 
-the Python packages which implement both MSSA and SSA, and found only few decent packages with the similar functionality:
+Python packages which implement both MSSA and SSA, and found only few decent packages with the similar functionality:
 
 - https://github.com/AbdullahO/mSSA?tab=readme-ov-file
 - https://github.com/kieferk/pymssa
   
-However, they seem to be no longer maintained and they provided a limited functionality in comparison to what I need.
 (Arguably) the best functionality is provided by the RSSA-package in R (https://github.com/asl/rssa).
-So the aim of this package is to migrate the most useful functions from the RSSA-package into Python, in order to provide a seamless workflow for the time series analysis.
+
 
 
 ## List of the Core Packages

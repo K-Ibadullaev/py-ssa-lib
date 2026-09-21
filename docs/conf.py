@@ -14,4 +14,4 @@ html_theme = "furo"
 
 project = "py-ssa-lib"
 author = "Konstantin Ibadullaev"
-release = "2.0.0"
+release = "2.0.1"

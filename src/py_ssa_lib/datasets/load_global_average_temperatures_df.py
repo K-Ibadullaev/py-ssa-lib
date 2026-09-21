@@ -1,5 +1,4 @@
-import pandas as pd
-import os 
+
 # https://www.kaggle.com/datasets/shishu1421/global-temperature/data
 from importlib.resources import files
 import pandas as pd

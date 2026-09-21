@@ -43,6 +43,8 @@ dev = [
 [tool.setuptools]
 package-dir = {"" = "src"}
 include-package-data = true
+[tool.setuptools.package-data]
+py_ssa_lib = ["datasets/*.csv"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

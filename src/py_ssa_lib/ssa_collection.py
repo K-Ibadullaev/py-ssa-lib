@@ -34,7 +34,7 @@ class BaseSSA(ABC):
         decomposition_strategy : SVDStrategy | None
             Strategy used to decompose the trajectory matrix.
         weighting_strategy : WeightingStrategy | None
-            Strategy used to assign weights to individual time series.
+            Strategy used to assign strictly positive weights to individual time series.
         """
         
         self.decomposition_strategy =  ( decomposition_strategy  or self.DEFAULT_DECOMPOSITION() )
@@ -339,7 +339,7 @@ class BaseSSA(ABC):
         """
         Parameters
         ----------
-        idx_components :idx_components : list[int] or np.ndarray
+        idx_components : list[int] or np.ndarray
             Components defining the signal subspace.
         Returns
         -------
@@ -370,7 +370,8 @@ class BaseSSA(ABC):
                 idx_components : list[int] or np.ndarray
                     Components used to estimate the recurrence relation.
                 return_full : bool
-                    Whether to return original and forecasted values together.
+                    Whether to return the reconstructed history together
+                    with the forecasted values.
 
                 Returns
                 -------
@@ -378,9 +379,16 @@ class BaseSSA(ABC):
                     L-recurrent forecast.
                 """
                 R = self.estimate_LRR(idx_components)
-
+                
                 y_pred = np.zeros((self.N + forecast_steps, self.S))
-                y_pred[:self.N] = self.X_s
+                #y_pred[:self.N] = self.X_s
+                # Reconstruct the signal associated with
+                # the selected component subspace.
+                reconstructed_signal = self.reconstruct_components(
+                                                                idx_components=idx_components
+                                                            )
+                y_pred[:self.N] = reconstructed_signal
+
 
                 for m in range(forecast_steps):
 
@@ -412,12 +420,13 @@ class BaseSSA(ABC):
                 idx_components : list[int] or np.ndarray
                     Components defining the forecasting subspace.
                 return_full : bool
-                    Whether to return original and forecasted values together.
+                    Whether to return the reconstructed history together
+                    with the forecasted values.
 
                 Returns
                 -------
                 ndarray
-                    K/vector forecast.
+                    K-vector forecast.
                 """
 
                 V = self.V[:, idx_components]
@@ -437,7 +446,13 @@ class BaseSSA(ABC):
 
                 y_weighted = np.zeros(  (self.N + forecast_steps, self.S)    )
 
-                y_weighted[:self.N] = (  self.X_s * sqrt_w  )
+                # Reconstruct the signal associated with
+                # the selected component subspace.
+                reconstructed_signal = self.reconstruct_components(
+                                                                idx_components=idx_components
+                                                            )
+
+                y_weighted[:self.N] = reconstructed_signal * sqrt_w
 
                 for m in range(forecast_steps):
 
@@ -447,12 +462,11 @@ class BaseSSA(ABC):
                     ]
 
                     # V is arranged in series blocks:
-                    # series 1 values, series 2 values, ...
+                    # series 1 values, series 2 values, 
                     Z = window.T.reshape(-1)
 
-                    y_weighted[self.N + m] = (
-                        forecast_operator @ Z
-                    )
+                    y_weighted[self.N + m] =  forecast_operator @ Z
+                    
 
                 # Return to original physical scale
                 y_pred = y_weighted / sqrt_w

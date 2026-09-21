@@ -58,7 +58,7 @@ class UniformWeights(WeightingStrategy):
 
 class PrecomputedWeights(WeightingStrategy):
     """
-    Pass precomputed weights for the spectral channels in SSA and MSSA.
+    Pass precomputed weights for the spectral channels in SSA and MSSA. Weights must be strictly positive!
      
     """
 
